@@ -1,5 +1,5 @@
 {
-  "name": "vuex-map-fields",
+  "name": "relocity-vuex-map-fields",
   "version": "1.3.4",
   "description": "Enable two-way data binding for form fields saved in a Vuex store",
   "keywords": [
@@ -7,8 +7,8 @@
     "vuex",
     "two-way data binding"
   ],
-  "author": "Markus Oberlehner",
-  "homepage": "https://github.com/maoberlehner/vuex-map-fields",
+  "author": "Michael Garcia",
+  "homepage": "https://github.com/mgarciarelocity/vuex-map-fields",
   "license": "MIT",
   "scripts": {
     "scripts:umd": "rollup --config --output.format umd --name vuex-map-fields --output.file dist/index.js src/index.js",
@@ -17,15 +17,8 @@
     "scripts": "yarn run scripts:umd && yarn run scripts:es && yarn run scripts:minify",
     "build": "yarn run scripts",
     "fake-publish": "yarn run build && sh test/utils/fake-publish.sh",
-    "lint:scripts": "yarn run fake-publish && eslint --ignore-path .gitignore .",
-    "lint:scripts-md": "eslint --config .eslintrc-md.json --ext md --ignore-path .gitignore .",
-    "lint": "yarn run lint:scripts && yarn run lint:scripts-md",
     "coveralls": "yarn run test:coverage && cat coverage/lcov.info | coveralls",
-    "test:unit": "jest src",
-    "test:integration": "yarn run fake-publish && jest test",
-    "test:coverage": "yarn run fake-publish && jest --coverage --maxWorkers=4",
-    "test": "yarn run test:unit && yarn run test:integration",
-    "prepublishOnly": "yarn run lint && yarn test && yarn run build"
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@avalanche/eslint-config": "^3.0.0",
@@ -51,10 +44,10 @@
   "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maoberlehner/vuex-map-fields"
+    "url": "https://github.com/mgarciarelocity/vuex-map-fields"
   },
   "bugs": {
-    "url": "https://github.com/maoberlehner/vuex-map-fields/issues"
+    "url": "https://github.com/mgarciarelocity/vuex-map-fields/issues"
   },
   "browserslist": [
     "last 2 versions"
@@ -64,5 +57,9 @@
       "/node_modules/",
       "/test/package/"
     ]
+  },
+  "dependencies": {
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-standard": "^13.0.1"
   }
 }
